@@ -8,6 +8,6 @@ Versão mais light do meu script E-Tube! DroidTube roda no android!
     cd DroidTube
     
 
-    python3 youtube.py
+    python3 youtube.py -h
 
 # Roda no termux
