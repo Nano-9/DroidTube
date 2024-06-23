@@ -108,12 +108,17 @@ class DownloadYouTube:
 	def BaixarVideo(self):
 
 		self.youtube = YouTube(self.LinkTube)
-		self.streams = self.youtube.streams.filter(progressive=True,file_extension="mp4")
-		self.nome = self.youtube.title
-		print("\033[1;32m[+]\033[m \033[1mBaixando o vídeo...\033[m")
-		self.video = self.streams.get_highest_resolution()
-		self.video.download(output_path="VÍDEOS")
-		print("\033[1;32m[+]\033[m \033[1mVídeo ( {} ) baixado!\033[m\n".format(self.nome))
+		try:
+			self.streams = self.youtube.streams.filter(progressive=True,file_extension="mp4")
+		except pytube.exceptions.AgeRestrictedError:
+			print("\033[1;31m[!]\033[m \033[1mVídeo privado!\033[m")
+			sys.exit()
+		else:
+			self.nome = self.youtube.title
+			print("\033[1;32m[+]\033[m \033[1mBaixando o vídeo...\033[m")
+			self.video = self.streams.get_highest_resolution()
+			self.video.download(output_path="VÍDEOS")
+			print("\033[1;32m[+]\033[m \033[1mVídeo ( {} ) baixado!\033[m\n".format(self.nome))
 
 	def BaixarPlaylist(self):
 
