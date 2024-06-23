@@ -1,8 +1,6 @@
 import os
 import sys
 import requests
-from pytube import YouTube
-from pytube import Playlist
 from download import CheckInternetUsuario
 
 os.system("clear")
