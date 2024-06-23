@@ -46,7 +46,7 @@ class CheckInternetUsuario:
 							self.online = False
 			case "-p":
 				try:
-					self.conectTest = self.connectWeb.get("https://www.google.com/")
+					self.conectTest = self.connectWeb.get("https://www.google.com/",headers=self.headersWeb)
 				except KeyboardInterrupt:
 					print("\n\033[1;31m[!]\033[m \033[1mSaindo...\033[m\n")
 				except:
