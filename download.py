@@ -121,7 +121,7 @@ class DownloadYouTube:
 		tamanho = []
 		for video in playYT:
 			tamanho.append(video)
-		match tamanho:
+		match len(tamanho):
 			case 1:
 				print("Playlist contém {} vídeo!".format(len(tamanho)))
 			case _:
