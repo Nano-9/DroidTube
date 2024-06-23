@@ -4,7 +4,6 @@
 # Versão requisitada do python: 3.10 +
 # Coded by: Nano
 
-import os
 import sys
 import re
 import requests
