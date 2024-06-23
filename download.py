@@ -7,6 +7,7 @@
 import sys
 import re
 import requests
+import pytube
 from pytube import YouTube
 from pytube import Playlist
 from time import sleep
@@ -131,5 +132,10 @@ class DownloadYouTube:
 			download = YouTube(videos)
 			bestResolution = download.streams.get_highest_resolution()
 			print("\033[1;36m[*]\033[m \033[1mBaixando vídeo {}: {}\033[m".format(posicao+1,download.title))
-			bestResolution.download(output_path="PLAYLIST")
-			print("\033[1;32m[*]\033[m \033[1mCompleto!\033[m")
+			try:
+				bestResolution.download(output_path="PLAYLIST")
+			except:
+				print("\033[1;31m[!]\033[m \033[1mInformações incompletaa sobre o vídeo!\033[m")
+				print("\033[1;31m[!]\033[m \033[1mPulando..\033[m")
+			else:
+				print("\033[1;32m[*]\033[m \033[1mCompleto!\033[m")
