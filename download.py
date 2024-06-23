@@ -135,7 +135,7 @@ class DownloadYouTube:
 			try:
 				bestResolution.download(output_path="PLAYLIST")
 			except:
-				print("\033[1;31m[!]\033[m \033[1mInformações incompletaa sobre o vídeo!\033[m")
+				print("\033[1;31m[!]\033[m \033[1mInformações incompletas sobre o vídeo!\033[m")
 				print("\033[1;31m[!]\033[m \033[1mPulando..\033[m")
 			else:
 				print("\033[1;32m[*]\033[m \033[1mCompleto!\033[m")
