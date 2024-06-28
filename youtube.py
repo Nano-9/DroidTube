@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
 	versao = sys.version
 	if len(sys.argv) == 3:
-		if versao[0:4].replace(".","") >"310":
+		if versao[0:4].replace(".","") >="310":
 			if sys.argv[1] == "-v":
 				download = GetLinkUser(optionss=sys.argv[1],linkss=sys.argv[2])
 				download.ConfigureDownload()
